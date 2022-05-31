@@ -1,1 +1,1 @@
-# -ICS2O-Space-Aliens
+# ICS2O-Space-Aliens
