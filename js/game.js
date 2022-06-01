@@ -15,7 +15,7 @@ const config = {
   width: 1920,
   height: 1080,
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
       debug: true
     }
