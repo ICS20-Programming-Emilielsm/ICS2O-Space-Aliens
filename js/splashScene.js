@@ -1,4 +1,10 @@
-/* global Phaser*/
+/* global Phaser */
+
+// Copyright (c) 2020 Mr. Coxall All rights reserved
+//modified by Emilie
+// Created by:Emilie
+// Created on: Jun 2022
+// This is the Splash Scene
 
 // This is a constructor 
 class SplashScene extends Phaser.Scene {
@@ -28,7 +34,6 @@ class SplashScene extends Phaser.Scene {
     if (time > 3000) {
       this.scene.switch('titleScene')
     }
-    this.scene.switch('titleScene')
   }
 }
 // show the splash scene
