@@ -34,6 +34,8 @@ class MenuScene extends Phaser.Scene {
     this.startButton = this.add.sprite(1920 / 2, (1080 / 2) + 100, 'startButton')
     this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
+
+    this.titleSceneText = this.add.text(1920 / 2, (1080 / 2) + 350, 'Use Space, and arrows to move', this.titleSceneTextStyle).setOrigin(0.5)
   }
 
   update (time, delta) {
