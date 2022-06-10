@@ -65,7 +65,7 @@ class GameScene extends Phaser.Scene {
     this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
     
     // SPACE SHIP STARTING LOCATION 
-    this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship').setScale(0.3)
+    this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship')
 
     // group for missiles
     this.missileGroup = this.physics.add.group()
