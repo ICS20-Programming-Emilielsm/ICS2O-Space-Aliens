@@ -19,7 +19,8 @@ class GameScene extends Phaser.Scene {
     this.alienGroup.add(anAlien)
     
   }
-  
+
+  // This is the preset variables of each part in the gaem scene
   constructor () {
     super({key: 'gameScene'})
 
@@ -74,6 +75,7 @@ class GameScene extends Phaser.Scene {
     this.alienGroup = this.add.group()
     this.createAlien()
 
+    // the physics of the collisions
     this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
       alienCollide.destroy()
       missileCollide.destroy()

@@ -9,7 +9,7 @@
 class MenuScene extends Phaser.Scene {
   constructor () {
     super({key: 'menuScene'})
-
+    // preset values
     this.menuSceneBackgroundImage = null
     this.startButton = null
   }
@@ -26,15 +26,18 @@ class MenuScene extends Phaser.Scene {
     this.load.image('startButton', 'assets/start.png')
   }
 
+  // background image
   create (data) {
     this.menuSceneBackgroundImage = this.add.sprite(0, 0, 'menuSceneBackground')
     this.menuSceneBackgroundImage.x = 1920 / 2
     this.menuSceneBackgroundImage.y = 1080 / 2
 
+    // start button
     this.startButton = this.add.sprite(1920 / 2, (1080 / 2) + 100, 'startButton')
     this.startButton.setInteractive({ useHandCursor: true })
     this.startButton.on('pointerdown', () => this.clickButton())
 
+    // text information
     this.menuSceneText = this.add.text(1920 / 2, (900 / 2) + 350, 'Use SPACE BAR to kill, and use the arrow keys to aviod those nasty beasts',                       this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
 
   }
