@@ -31,7 +31,7 @@ class SplashScene extends Phaser.Scene {
 
   // switch over from slapsh scene to tile screen 
   update (time, delta) {
-    if (time > 3000) {
+    if (time > 6000) {
       this.scene.switch('titleScene')
     }
   }

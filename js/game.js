@@ -24,9 +24,9 @@ const config = {
   physics: {
     default: 'arcade',
     arcade: {
-      debug: false
+      debug: true
     }
-  },a
+  },
   // set background colour (yellow)
   backgroundColor: 0xffffff,
   scale: {

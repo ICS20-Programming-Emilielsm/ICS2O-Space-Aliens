@@ -23,7 +23,7 @@ class MenuScene extends Phaser.Scene {
   preload () {
     console.log("Menu Scene")
     this.load.image('menuSceneBackground', 'assets/aliens_screen_image2.jpg')
-    this.load.image('startButton', 'assets/start.png')
+    this.load.image('startButton', 'assets/start.PNG')
   }
 
   // background image
@@ -35,7 +35,7 @@ class MenuScene extends Phaser.Scene {
     // start button
     this.startButton = this.add.sprite(1920 / 2, (1080 / 2) + 100, 'startButton')
     this.startButton.setInteractive({ useHandCursor: true })
-    this.startButton.on('pointerdown', () => this.clickButton())
+    this.startButton.on('pointerdown', () => this.clickButton()).setScale(0.5)
 
     // text information
     this.menuSceneText = this.add.text(1920 / 2, (900 / 2) + 350, 'Use SPACE BAR to kill, and use the arrow keys to aviod those nasty beasts',                       this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
