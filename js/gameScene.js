@@ -9,14 +9,14 @@
 class GameScene extends Phaser.Scene {
 
   // create and cat
-  createAlien () {
+  createCat () {
     const catXLocation = Math.floor(Math.random() * 1920) + 1 // this will get a number between 1 and 1920;
     let catXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50;
     catXVelocity *= Math.round(Math.random()) ? 1 : -1 // this will add minus sign in 50% of cases
-    const anAlien = this.physics.add.sprite(catXLocation, -100, 'cat')
-    anAlien.body.velocity.y = 200
-    anAlien.body.velocity.x = catXVelocity
-    this.catGroup.add(anAlien)
+    const anCat = this.physics.add.sprite(catXLocation, -100, 'cat')
+    anCat.body.velocity.y = 200
+    anCat.body.velocity.x = catXVelocity
+    this.catGroup.add(anCat)
     
   }
 
@@ -73,7 +73,7 @@ class GameScene extends Phaser.Scene {
 
     // create a group for the cats
     this.catGroup = this.add.group()
-    this.createAlien()
+    this.createCat()
 
     // the physics of the collisions
     this.physics.add.collider(this.waterGroup, this.catGroup, function (waterCollide, catCollide) {
@@ -82,8 +82,8 @@ class GameScene extends Phaser.Scene {
       this.sound.play('explosion')
       this.score = this.score + 1
       this.scoreText.setText('Score: ' + this.score.toString())
-      this.createAlien()
-      this.createAlien()
+      this.createCat()
+      this.createCat()
     }.bind(this))
 
     // Collisions between mouse and cats
@@ -139,6 +139,13 @@ class GameScene extends Phaser.Scene {
     item.y = item.y - 15
       if (item.y < 50) {
         item.destroy()
+      }
+    })
+    // alien loop
+     this.catGroup.children.each(function (item) {
+      if (item.y > 1080) {
+        item.y = -100
+        item.x = Math.floor(Math.random() * 1920 + 1)
       }
     })
   }
