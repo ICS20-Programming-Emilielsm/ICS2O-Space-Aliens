@@ -24,6 +24,7 @@ class MenuScene extends Phaser.Scene {
     console.log("Menu Scene")
     this.load.image('menuSceneBackground', 'assets/aliens_screen_image2.jpg')
     this.load.image('startButton', 'assets/start.PNG')
+    this.load.image('instructionButton', 'assets/inbutton.png')
   }
 
   // background image
@@ -40,6 +41,10 @@ class MenuScene extends Phaser.Scene {
     // text information
     this.menuSceneText = this.add.text(1920 / 2, (900 / 2) + 350, 'Use SPACE BAR to kill, and use the arrow keys to aviod those nasty beasts',                                this.titleSceneTextStyle).setOrigin(0.5).setScale(2)
 
+    // instrcution button
+    this.instructionButton = this.add.sprite(490 / 2, (30 / 2) + 100, 'instructionButton').setScale(0.3)
+    this.instructionButton.setInteractive({ useHandCursor: true })
+    this.instructionButton.on('pointerdown', () => this.instructClickButton())
   }
 
   update (time, delta) {
@@ -48,6 +53,12 @@ class MenuScene extends Phaser.Scene {
   clickButton () {
     this.scene.start('gameScene')
   }
+
+  // when button is clicked
+  instructClickButton () {
+    this.scene.start('instructionScene')
+  }
+  
 }
 
 export default MenuScene
